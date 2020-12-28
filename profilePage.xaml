@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="App2.profilePage">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <!-- new layout for profile page -->
+                <RowDefinition Height="*" />
+                <RowDefinition Height="6*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <!--title on profile page formated here -->
+            <Label Grid.Row="0"
+               Text="Charlottesville Recycling Centers"
+               HorizontalTextAlignment="Center"
+               VerticalTextAlignment="Center"
+               FontSize="24"
+               FontAttributes="Bold"
+               TextColor="White"
+               BackgroundColor="#3d5e8c"/>
+            <!-- Request Recycling Section, under header -->
+            <StackLayout Grid.Row="1">
+                <Label Text="Request recycling"
+                       Margin="0,-2,0,0"
+                       TextColor="White"
+                       FontAttributes="Bold"
+                       WidthRequest="120"
+                       FontSize="25"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center"
+                       BackgroundColor="#116754"/>
+                <!-- information format for requesting recycling -->
+                <Label
+                    Text="Click here if you would like to request an at-home recycling bin!"
+                    Padding="40,5,40,20"
+                    TextColor="White"
+                    Margin="-10"
+                    HorizontalTextAlignment="Center"
+                    BackgroundColor="#116754"/>
+                <Label
+                       FontAttributes="Bold"
+                       HorizontalTextAlignment="Center"
+                    Margin="0,40,0,0">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Request Form"
+
+                                  FontSize="18"
+                                  TextDecorations="Underline"
+                                  FontAttributes="Bold"
+                                  TextColor="#3d5e8c">
+                                <!-- link format for requesting recycling bins at home --> 
+                                <Span.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding TapCommand}"
+                                                          CommandParameter="https://charlottesville.org/FormCenter/Public-Works-Forms-5/Recycling-Cart-Request-49" />
+                                </Span.GestureRecognizers>
+                            </Span>
+                        </FormattedString>
+
+                    </Label.FormattedText>
+                 </Label>
+                <!-- contact information, phone and link about recycling centers -->
+                <Label Text="Contact information for questions"
+                       TextColor="White"
+                       FontAttributes="Bold"
+                       WidthRequest="120"
+                       FontSize="20"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center"
+                       BackgroundColor="#116754"
+                       Margin="0,40,0,0"/>
+                <Label Text="Phone: 434-970-3834"
+                       Margin="0,40,0,0"
+                       TextColor="Black"
+                       FontAttributes="Bold"
+                       FontSize="20"
+                       HorizontalTextAlignment="Center"/>
+                <Label
+                    HorizontalTextAlignment="Center">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Contact Form" 
+                                  TextDecorations="Underline"
+                                  FontAttributes="Bold"
+                                  FontSize="18"
+                                  TextColor="#3d5e8c">
+                                <!-- link for contact -->
+                                <Span.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding TapCommand}"
+                                                          CommandParameter="https://charlottesville.org/formcenter/Public-Works-5/Email-Contact-Form-for-Recycling-153" />
+                                </Span.GestureRecognizers>
+                            </Span>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </StackLayout>
+            <!-- menu bar format on profile page -->
+            <Grid Grid.Row="2"
+                  BackgroundColor="LightGray">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <ImageButton Grid.Column="0"
+                    Source="list.png"
+                    BackgroundColor="Transparent"
+                    Margin="20"
+                    Clicked= "OnList">
+                </ImageButton>
+                <ImageButton Grid.Column="1"
+                   Source="map.png"
+                   BackgroundColor="Transparent"
+                   Margin="20"
+                   Clicked = "OnMap" />
+                <ImageButton Grid.Column="2"
+                   Source="Profile.png"
+                   BackgroundColor="Transparent"
+                   Margin="20"
+                             Clicked="OnProfile"/>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

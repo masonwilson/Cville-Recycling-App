@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<pages:PopupPage  xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+                  xmlns="http://xamarin.com/schemas/2014/forms"
+                  xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                  x:Class="App2.Ivy">
+    <!-- pop up page allows page to show without covering all of the screen, tapping off will close the popup -->
+    <pages:PopupPage.Animation>
+        <!-- formatting of page to make popup work-->
+        <animations:ScaleAnimation
+            PositionIn="Center"
+            PositionOut="Center"
+            ScaleIn="1.2"
+            ScaleOut="1"
+            DurationIn="400"
+            DurationOut="200"
+            EasingIn="SinOut"
+            HasBackgroundAnimation="True"/>
+    </pages:PopupPage.Animation>
+    <StackLayout
+        VerticalOptions="Center">
+        <!-- this layout formats all of the information on the popup -->
+        <Frame
+            BackgroundColor="#116754"
+            Margin="20"
+            CornerRadius="10"
+            x:Name="BlueFrame"
+            IsClippedToBounds="True"
+            HorizontalOptions="Center">
+            <StackLayout
+                Spacing="0">
+                <!-- header text of popup-->
+                <Label
+                    Text="Ivy Material Utilization Center"
+                    FontSize="30"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    HorizontalTextAlignment="Center"/>
+                <!-- address format -->
+                 <Label Text="4576 Dick Woods Road"
+                        HorizontalOptions="Center"
+                        FontSize="20"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        Margin="20"/>
+                <!-- information format -->
+                <Label Text="Accepts: Corrugated Cardboard, Newspaper + Magazines, Appliances, Leaves + Yard Waste"
+                        HorizontalOptions="Center"
+                       HorizontalTextAlignment="Center"
+                        FontSize="20"
+                        TextColor="White"
+                       FontAttributes="None"
+                        Margin="10"/>
+                <!-- website formated as a link-->
+                <Label x:Name="website"
+                    FontSize="20"
+                       HorizontalTextAlignment="Center"
+                       TextColor="White">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="More Information"
+                                  TextDecorations="UnderLine"
+                                  FontAttributes="Bold">
+                                <!-- if the link is clicked on, the website will be opened -->
+                                <Span.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding TapCommand}"
+                                                          CommandParameter="http://www.rivanna.org/ivy-material-utilization-center-muc/" />
+                                </Span.GestureRecognizers>
+                            </Span>
+
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+             </StackLayout>
+        </Frame>
+    </StackLayout>
+</pages:PopupPage>

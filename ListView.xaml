@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App2.ListView"
+             
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="6*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Label
+                Text="Charlottesville Recycling Centers"
+
+               HorizontalTextAlignment="Center"
+
+               VerticalTextAlignment="Center"
+
+               FontSize="Large"
+
+               FontAttributes="Bold"
+
+               TextColor="White"
+
+               BackgroundColor="#3d5e8c"/>
+            <ScrollView
+                Grid.Row="1">
+                <StackLayout>
+                    <Button Text="McIntire Recycling Center"
+                        BorderColor="#116754"
+                        BorderWidth="5"
+                        FontFamily="Sour"
+                        HeightRequest="50"
+                        CornerRadius="10"
+                        FontSize="20"
+                        HorizontalOptions="FillAndExpand"
+                        Margin="20,10,20,0"
+                        TextColor="Black"
+                        FontAttributes="Bold"
+                        BackgroundColor="White"
+                        Clicked="McIntire_Clicked"> <!-- click button -->
+                    </Button>
+                    <Button Text="Ivy Material Utilization Center"
+                        BorderColor="#116754"
+                        BorderWidth="5"
+                        FontFamily="Sour"
+                        HeightRequest="50"
+                        CornerRadius="10"
+                        FontSize="20"
+                        HorizontalOptions="FillAndExpand"
+                        Margin="20,10,20,0"
+                        TextColor="Black"
+                        FontAttributes="Bold"
+                        BackgroundColor="White"
+                        Clicked="Ivy_Clicked"/> <!-- click button -->
+                <Button Text="Paper Sort Facility"
+                        BorderColor="#116754"
+                        BorderWidth="5"
+                        FontFamily="Sour"
+                        HeightRequest="50"
+                        CornerRadius="10"
+                        FontSize="20"
+                        HorizontalOptions="FillAndExpand"
+                        Margin="20,10,20,0"
+                        TextColor="Black"
+                        FontAttributes="Bold"
+                        BackgroundColor="White"
+                        Clicked="Paper_Clicked"/> <!-- click button -->
+                <Button Text="Pantops Shopping Center"
+                        BorderColor="#116754"
+                        BorderWidth="5"
+                        FontFamily="Sour"
+                        HeightRequest="50"
+                        CornerRadius="10"
+                        FontSize="20"
+                        HorizontalOptions="FillAndExpand"
+                        Margin="20,10,20,0"
+                        TextColor="Black"
+                        FontAttributes="Bold"
+                        BackgroundColor="White"
+                        Clicked="Pantops_Clicked"/> <!-- click button -->
+                <Button Text="Northside Library"
+                        BorderColor="#116754"
+                        BorderWidth="5"
+                        FontFamily="Sour"
+                        HeightRequest="50"
+                        CornerRadius="10"
+                        FontSize="20"
+                        HorizontalOptions="FillAndExpand"
+                        Margin="20,10,20,0"
+                        TextColor="Black"
+                        FontAttributes="Bold"
+                        BackgroundColor="White"
+                        Clicked="Northside_Clicked"/> <!-- click button -->
+                <Button Text="Scottsville Boys and Girls Club"
+                        BorderColor="#116754"
+                        BorderWidth="5"
+                        FontFamily="Sour"
+                        HeightRequest="50"
+                        CornerRadius="10"
+                        FontSize="20"
+                        HorizontalOptions="FillAndExpand"
+                        Margin="20,10,20,0"
+                        TextColor="Black"
+                        FontAttributes="Bold"
+                        BackgroundColor="White"
+                        Clicked="Scottsville_Clicked"/> <!-- click button -->
+                <Button Text="Blue Ridge Pack + Ship"
+                        BorderColor="#116754"
+                        BorderWidth="5"
+                        FontFamily="Sour"
+                        HeightRequest="50"
+                        CornerRadius="10"
+                        FontSize="20"
+                        HorizontalOptions="FillAndExpand"
+                        Margin="20,10,20,0"
+                        TextColor="Black"
+                        FontAttributes="Bold"
+                        BackgroundColor="White"
+                        Clicked="BlueRidge_Clicked"/><!-- click button -->
+                <Button Text="Pack ‘N’ Mail"
+                        BorderColor="#116754"
+                        BorderWidth="5"
+                        FontFamily="Sour"
+                        HeightRequest="50"
+                        CornerRadius="10"
+                        FontSize="20"
+                        HorizontalOptions="FillAndExpand"
+                        Margin="20,10,20,0"
+                        TextColor="Black"
+                        FontAttributes="Bold"
+                        BackgroundColor="White"
+                        Clicked="Pack_Clicked"/> <!-- click button -->
+                <Button Text="Package Depot"
+                        BorderColor="#116754"
+                        BorderWidth="5"
+                        FontFamily="Sour"
+                        HeightRequest="50"
+                        CornerRadius="10"
+                        FontSize="20"
+                        HorizontalOptions="FillAndExpand"
+                        Margin="20,10,20,0"
+                        TextColor="Black"
+                        FontAttributes="Bold"
+                        BackgroundColor="White"
+                        Clicked="Package_Clicked"/> <!-- click button -->
+                </StackLayout>
+            </ScrollView>
+            <Grid Grid.Row="2"
+                  BackgroundColor="LightGray">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <ImageButton Grid.Column="0"
+                    Source="list.png"
+                    BackgroundColor="Transparent"
+                    Margin="20"
+                    Clicked= "OnList">
+                </ImageButton>
+                <ImageButton Grid.Column="1"
+                             BackgroundColor="Transparent"
+                   Source="map.png"
+                   Margin="20"
+                       Clicked = "OnMap" />
+                <ImageButton Grid.Column="2"
+                             BackgroundColor="Transparent"
+                       Source="Profile.png"
+                       Margin="20"
+                             Clicked="OnProfile"/>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+
+</ContentPage>

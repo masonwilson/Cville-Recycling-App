@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:gmaps="clr-namespace:Xamarin.Forms.GoogleMaps;assembly=Xamarin.Forms.GoogleMaps"
+             x:Class="App2.MainPage">
+
+    <Grid>
+        <!-- grid layout used to create header, map, and task bar at bottom-->
+        <Grid.RowDefinitions>
+            <!-- sizes of each row, largest in middle -->
+            <RowDefinition Height="*" />
+            <RowDefinition Height="6*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <!-- title defined here with text formatting -->
+        <Label Text="Charlottesville Recycling Centers"
+               HorizontalTextAlignment="Center"
+               VerticalTextAlignment="Center"
+               FontSize="Large"
+               FontAttributes="Bold"
+               TextColor="White"
+               BackgroundColor="#166DA3"/>
+        <ScrollView Grid.Row="1">
+            <!-- scroll/stack view used to accomodate map -->
+            <StackLayout>
+                <!-- google maps implementation -->
+                <gmaps:Map x:Name="MyMap" MapType="Street" HasZoomEnabled="True" MyLocationEnabled="True" IsShowingUser="true" >
+                    <gmaps:Map.ItemTemplate>
+                        <DataTemplate>
+                            <gmaps:Pin Icon="{Binding PinIcon}" Position="{Binding Position}"
+                                  Label="{Binding PinLabel}" />
+                        </DataTemplate>
+                    </gmaps:Map.ItemTemplate>
+                </gmaps:Map>
+            </StackLayout>
+        </ScrollView>
+        <!-- row 2 sets up menu bar at bottom, text formating and pictures for icons -->
+        <Grid Grid.Row="2"
+              BackgroundColor ="LightGray">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <ImageButton Grid.Column="0"
+                Source="list.png"
+                BackgroundColor="Transparent"
+                Margin="20"
+                Clicked= "OnList">
+            </ImageButton>
+            <ImageButton Grid.Column="1"
+                         BackgroundColor="Transparent"
+               Source="map.png"
+               Margin="20"
+                Clicked="OnMap">
+            </ImageButton>
+            <ImageButton Grid.Column="2"
+                         BackgroundColor="Transparent"
+                   Source="Profile.png"
+                   Margin="20"
+                Clicked="OnProfile">
+                </ImageButton>
+        </Grid>
+    </Grid>
+
+</ContentPage>
